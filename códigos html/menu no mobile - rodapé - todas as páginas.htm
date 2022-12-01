@@ -1,0 +1,173 @@
+<script src="https://use.fontawesome.com/38d45f7c1d.js"></script>
+<div class="menu-mobile-float">
+    <i class="fa fa-th abrir-menu" aria-hidden="true"></i>
+    <div class="area-menu" style="display: none"></div>
+    <div class="fechar-menu" style="display: none"></div>
+    <div class="fechar-menu-icone" style="display: none"></div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#cabecalho .menu.superior > ul').clone().appendTo($('.menu-mobile-float .area-menu'));
+        $(".menu-mobile-float").insertAfter(".atalhos-mobile > ul > li:first-child");
+    });
+
+    $(document).ready(function(){
+        $(".abrir-menu").click(function(event){
+            $(".area-menu").show();
+            $(".fechar-menu").show();
+            $(".fechar-menu-icone").show();
+        });
+
+        $(".fechar-menu").click(function(event){
+            $(".area-menu").hide();
+            $(".fechar-menu").hide();
+            $(".fechar-menu-icone").hide();
+        });
+
+        $(".fechar-menu-icone").click(function(event){
+            $(".area-menu").hide();
+            $(".fechar-menu").hide();
+            $(".fechar-menu-icone").hide();
+        });
+    });
+</script>
+
+<style>
+    @media only screen and (max-width: 767px){
+        .menu-mobile-float {
+            display: inline-block;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+            position: relative;
+        }
+
+        .menu-mobile-float > .abrir-menu {
+            font-size: 27px;
+            display: inline-block;
+            vertical-align: middle;
+            color: #ffffff /* ------------------------ COR DO ICONE DO MENU */
+        }
+
+        .menu-mobile-float .fechar-menu {
+            position: fixed;
+            top: 51px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: rgba(0,0,0,.6)
+        }
+
+        .menu-mobile-float .fechar-menu-icone {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu-mobile-float .area-menu {
+            position: fixed;
+            background: #ffffff; /* ------------------------ COR DE FUNDO DO MENU */
+            z-index: 9999;
+            top: 51px;
+            left: 0;
+            max-width: 280px;
+            width: 80%;
+            bottom: 0;
+            overflow-x: auto;
+        }
+
+        .menu-mobile-float .area-menu > ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-mobile-float .area-menu > ul > li {
+            display: block;
+            float: none;
+            text-align: left;
+            line-height: normal;
+            height: auto !important;
+            position: relative;
+        }
+
+        .menu-mobile-float .area-menu > ul > li > a {
+            padding-left: 20px
+        }
+
+        .menu-mobile-float .area-menu > ul > li.com-filho::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 50px;
+            height: 40px;
+            right: 10px;
+            text-align: center;
+            font-size: 15pt;
+            background: url("https://cdn.awsli.com.br/218/218665/arquivos/seta-baixo.png") no-repeat center center;
+            background-size: 20px;
+        }
+
+        .menu-mobile-float .area-menu > ul > li a {
+            position: relative;
+            top: initial;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 40px;
+        }
+
+        .menu-mobile-float .area-menu > ul > li ul a {
+            font-size: 11pt;
+            color: #444; /* ------------------------ COR DA FONTE DAS CATEGORIAS DO SUBMENU */
+            text-shadow: none;
+            display: block;
+            padding: 0 0 0 20px
+        }
+
+        .menu-mobile-float .area-menu > ul > li > a > strong {
+            font-size: 12pt; /* ------------------------ TAMANHO DA FONTE DAS CATEGORIAS PRINCIPAIS DO MENU */
+            color: #444; /* ------------------------ COR DA FONTE DAS CATEGORIAS PRINCIPAIS DO MENU */
+            text-shadow: none;
+            display: block
+        }
+
+        .menu-mobile-float .area-menu > ul > li > a i.icon-chevron-down {
+            display: none
+        }
+
+        .menu-mobile-float .area-menu > ul > li ul li ul,
+        .menu-mobile-float .area-menu > ul > li ul {
+            display: none;
+        }
+
+        .menu-mobile-float .area-menu > ul > li:hover > ul {
+            display: block;
+        }
+
+        .menu-mobile-float .area-menu > ul > li ul {
+            position: relative;
+            background: rgba(0,0,0,.2) /* ------------------------ COR DE FUNDO DO SUBMENU */
+        }
+
+        .menu-mobile-float .area-menu > ul > li ul > li {
+            display: block;
+            float: none;
+        }
+
+        .menu-mobile-float .area-menu > ul > li ul li i.icon-chevron-right {
+            display: none
+        }
+    }
+
+    body.pagina-carrinho.carrinho-checkout .menu-mobile-float,
+    body.pagina-pedido-finalizado .menu-mobile-float {
+        display: none;
+    }
+
+    @media only screen and (min-width: 768px){
+        .menu-mobile-float {display: none}
+    }
+</style>

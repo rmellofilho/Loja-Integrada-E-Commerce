@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    var IMAGEM_BARRA_URL = "https://cdn.awsli.com.br/1593/1593430/arquivos/903fb0edf6-min.jpg";
+    $(document).ready(function() {
+        if($('#barraTopo h4 a').length && $('.logo a img').length) {
+            $('#barraTopo h4 a').html('<img src="' + IMAGEM_BARRA_URL + '" alt="' + $('#barraTopo h4 a').text() + '" />');
+        }
+    });
+</script>
+<style>
+    #barraTopo h4 { margin-top: -3px; }
+    #barraTopo h4 img { width: auto; height: auto; max-height: 35px; }
+</style>

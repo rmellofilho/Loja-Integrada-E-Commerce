@@ -1,0 +1,1 @@
+$('#corpo .conteiner .banner.hidden-phone').removeClass('hidden-phone');
